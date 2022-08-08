@@ -1,0 +1,35 @@
+@use "./breakpoints" as *;
+
+@mixin center-block {
+  margin: {
+    right: auto;
+    left: auto;
+  }
+}
+
+@mixin cover-background($image-src) {
+  background-image: url($image-src);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin letter-spacing($val) {
+  letter-spacing: $val / 100 * 1em;
+}
+
+@mixin line-height($val) {
+  line-height: $val * 1rem;
+}
+
+@mixin breakpoint-up($size) {
+  @media only screen and (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media only screen and (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}

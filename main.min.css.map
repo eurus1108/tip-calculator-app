@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"main.min.css"}
+{"version":3,"sources":["scss/base/_font-face.scss","scss/base/_reset.scss","scss/base/_base.scss","scss/abstract/_type.scss","scss/abstract/_colors.scss"],"names":[],"mappings":"AAAQ,kFAAA,CAAA,KCCN,eAAA,CAGF,EACE,QAAA,CACA,SAAA,CAEA,qBAGE,6BAAA,CAAA,qBAAA,CAIJ,6BAIE,mBAAA,CCjBF,KACE,mCCHoB,CDIpB,gBAAA,CACA,aAAA,CACA,wBECe","file":"main.min.css"}

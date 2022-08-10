@@ -7,8 +7,8 @@
   width: 100%;
   background-color: $color-background-light;
   border-radius: 2.5rem;
-  box-shadow: 0 20px 40px 20px rgba($color-background-primary-strong, 0.1),
-    0 5px 5px -5px rgba($color-background-primary-base, 0.25);
+  box-shadow: 0 20px 80px -5px rgba($color-background-primary-strong, 0.1),
+    0 10px 10px -5px rgba($color-background-primary-base, 0.15);
 
   & &__container {
     display: flex;
@@ -35,10 +35,10 @@
         }
       }
 
-      &--tip {
+      &.card__input-box--tip {
         h2 {
           margin: {
-            bottom: ;
+            bottom: 1.6rem;
           }
         }
       }
@@ -62,10 +62,41 @@
         }
       }
 
+      &.card__input-box--bill {
+        .card__input-enter::before {
+          width: 1.1rem;
+          height: 1.7rem;
+          @include cover-background("./assets/icon-dollar.svg");
+        }
+      }
+
+      &.card__input-box--people {
+        .card__input-enter::before {
+          left: 1.7rem;
+          width: 1.3rem;
+          height: 1.6rem;
+          @include cover-background("./assets/icon-person.svg");
+        }
+      }
+
+      .card__input-enter {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 1.9rem;
+          transform: translateY(-50%);
+          display: block;
+        }
+      }
+
       .card__tip-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.4rem;
+        column-gap: 1.4rem;
+        row-gap: 1.6rem;
       }
 
       .card__tip {
@@ -80,9 +111,11 @@
           color: $color-text-light;
           background-color: $color-background-primary-strong;
           border-radius: 0.5rem;
+          transition: all 300ms ease;
+          transition-property: background-color, color;
           cursor: pointer;
 
-          &:focus {
+          &.selected {
             color: $color-text-secondary;
             background-color: $color-background-primary-base;
           }
@@ -101,6 +134,8 @@
       left: 4.8rem;
     }
     padding: 4rem;
+    max-width: 41.3rem;
+    width: 100%;
     background-color: $color-background-primary-strong;
     border-radius: 1.5rem;
 
@@ -122,6 +157,10 @@
       }
 
       .text-content {
+        margin: {
+          top: 0.7rem;
+        }
+
         h3 {
           margin: {
             bottom: -1.2rem;
@@ -133,11 +172,13 @@
         span {
           font-size: $font-size-100;
           @include letter-spacing(-5);
+          color: $color-text-subtle;
         }
       }
 
       .card__total-amount {
         font-size: $font-size-600;
+        @include letter-spacing(-2.5);
         color: $color-text-primary;
       }
     }

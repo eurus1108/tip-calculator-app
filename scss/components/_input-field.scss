@@ -20,6 +20,7 @@ input {
     margin: 0;
     padding: 0.4rem 1.5rem;
     width: 100%;
+    text-align: right;
     color: $color-text-secondary;
     background-color: $color-background-elevation-accent;
     border: 2px solid $color-border-default;
@@ -41,5 +42,9 @@ input {
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+
+  &::placeholder {
+    color: $color-text-dark;
   }
 }

@@ -12,5 +12,109 @@
     <link rel="stylesheet" href="./main.min.css" />
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
-  <body></body>
+  <body>
+    <main class="h-wrapper">
+      <div class="logo-container">
+        <img src="./assets/logo.svg" alt="splitter" />
+      </div>
+      <div class="card">
+        <div class="card__container">
+          <form class="card__calculator">
+            <div class="card__input-box card__input-box--bill">
+              <h2>Bill</h2>
+              <span class="error error--hidden">Can't be zero</span>
+              <div class="card__input-enter">
+                <input type="number" placeholder="0" min="0" data-input-bill />
+              </div>
+            </div>
+            <div class="card__input-box card__input-box--tip">
+              <h2>Select Tip %</h2>
+              <div class="card__tip-container">
+                <div class="card__tip">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="05"
+                    value="0.05"
+                    data-tip
+                  />
+                  <label for="05">5%</label>
+                </div>
+                <div class="card__tip">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="10"
+                    value="0.10"
+                    data-tip
+                  />
+                  <label for="10">10%</label>
+                </div>
+                <div class="card__tip">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="15"
+                    value="0.15"
+                    data-tip
+                  />
+                  <label for="15">15%</label>
+                </div>
+                <div class="card__tip">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="25"
+                    value="0.25"
+                    data-tip
+                  />
+                  <label for="25">25%</label>
+                </div>
+                <div class="card__tip">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="50"
+                    value="0.05"
+                    data-tip
+                  />
+                  <label for="50">50%</label>
+                </div>
+                <input type="number" name="tip" data-tip placeholder="Custom" />
+              </div>
+            </div>
+            <div class="card__input-box card__input-box--people">
+              <h2>Number of People</h2>
+              <span class="error error--hidden">Can't be zero</span>
+              <div class="card__input-enter">
+                <input
+                  type="number"
+                  placeholder="0"
+                  min="0"
+                  data-people-count
+                />
+              </div>
+            </div>
+          </form>
+          <div class="card__result-container">
+            <div class="card__result card__result--tip">
+              <div class="text-content">
+                <h3>Tip Amount</h3>
+                <span>/ person</span>
+              </div>
+              <div class="card__total-amount" data-tip-amount>$0.00</div>
+            </div>
+            <div class="card__result card__result--bill">
+              <div class="text-content">
+                <h3>Total</h3>
+                <span>/ person</span>
+              </div>
+              <div class="card__total-amount" data-bill-amount>$0.00</div>
+            </div>
+            <button class="button" data-reset>RESET</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

@@ -1,0 +1,25 @@
+@use "../abstract/" as *;
+
+.button {
+  padding: {
+    top: 1rem;
+    bottom: 0.8rem;
+  }
+  width: 100%;
+  font-size: $font-size-300;
+  color: $color-text-secondary;
+  background-color: $color-background-primary-base;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: background-color 300ms ease;
+  cursor: pointer;
+
+  &.button--disabled {
+    background-color: $color-background-disabled;
+  }
+
+  &:hover {
+    background-color: $color-background-primary-weak;
+  }
+}

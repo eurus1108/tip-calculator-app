@@ -1,0 +1,45 @@
+@use "../abstract/" as *;
+
+input,
+label {
+  font-size: $font-size-400;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+input {
+  &:focus {
+    border-color: $color-border-container;
+  }
+
+  &[type="radio"] {
+    display: none;
+  }
+
+  &[type="number"] {
+    margin: 0;
+    padding: 0.4rem 1.5rem;
+    width: 100%;
+    color: $color-text-secondary;
+    background-color: $color-background-elevation-accent;
+    border: 2px solid $color-border-default;
+    transition: border-color 300ms ease;
+    -moz-appearance: textfield;
+
+    &:focus {
+      border-color: $color-border-container;
+    }
+  }
+
+  &[data-tip] {
+    padding: {
+      left: 1.2rem;
+      right: 1.2rem;
+    }
+  }
+
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

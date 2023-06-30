@@ -19,7 +19,7 @@
     @error "Error: #{$shade} does not exist in #{$color}";
   }
 
-  @return map-get($colors, $colors, $shade);
+  @return map-get($colors, $color, $shade);
 }
 
 @function toRem($pixel) {

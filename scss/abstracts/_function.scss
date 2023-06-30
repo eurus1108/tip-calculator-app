@@ -1,0 +1,31 @@
+@use "./breakpoints" as *;
+@use "./colors" as *;
+@use "./type-scale" as *;
+
+@function fs($font-size) {
+  @if not map-has-key($font-sizes, $font-size) {
+    @error "Error: `#{$font-size}` does not exist in $font-sizes";
+  }
+
+  @return map-get($font-sizes, $font-size);
+}
+
+@function color($color, $shade) {
+  @if not map-has-key($colors, $color) {
+    @error "Error: #{$color} does not exist in $colors";
+  }
+
+  @if not map-has-key($colors, $color, $shade) {
+    @error "Error: #{$shade} does not exist in #{$color}";
+  }
+
+  @return map-get($colors, $colors, $shade);
+}
+
+@function toRem($pixel) {
+  @if type-of($pixel) != "number" {
+    @error "Error: toRem() only accepts numbers";
+  }
+
+  @return ($pixel / 16) + rem;
+}

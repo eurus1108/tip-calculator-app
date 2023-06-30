@@ -1,0 +1,26 @@
+@use "./breakpoints" as *;
+@use "./function" as *;
+
+@mixin mq($type: min, $width) {
+  @if not map-has-key($breakpoints, $width) {
+    @error "#{$width} does not exist in $breakpoints";
+  }
+
+  $width: map-get($breakpoints, $width);
+
+  @if $type == max {
+    $width: calc($width - 1px);
+  }
+
+  @media only screen and (#{$type}-width: $width) {
+    @content;
+  }
+}
+
+@mixin letter-spacing($val) {
+  letter-spacing: ($val / 16) + em;
+}
+
+@mixin line-height($val) {
+  line-height: ($val / 16) + rem;
+}

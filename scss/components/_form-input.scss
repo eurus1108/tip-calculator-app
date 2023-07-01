@@ -1,0 +1,109 @@
+@use "../abstracts/" as *;
+
+input {
+  &[type="number"] {
+    padding: toRem(6) toRem(17);
+    width: 100%;
+    font-size: fs(large);
+    text-align: right;
+    color: color(cyan, 500);
+    background-color: color(neutral, 200);
+    outline: 2px solid color(neutral, 200);
+    border-radius: toRem(5);
+    border: none;
+    appearance: textfield;
+    transition: outline-color 300ms ease;
+
+    &:focus {
+      outline-color: color-mix(
+        in srgb,
+        rgba(color(cyan, 500), 0.4),
+        rgba(color(cyan, 400), 0.5)
+      );
+    }
+  }
+
+  &[type="radio"] {
+    display: none;
+  }
+
+  &.form-input::placeholder {
+    color: color(neutral, 400);
+  }
+
+  &[data-tip-custom]::-webkit-input-placeholder {
+    color: color(neutral, 500);
+  }
+}
+
+.calculator {
+  margin-inline: toRem(8);
+
+  &__input-box {
+    margin-bottom: toRem(32);
+
+    h2 {
+      font-size: fs(base);
+    }
+
+    &--tip h2 {
+      margin-bottom: toRem(16);
+    }
+
+    &--bill h2,
+    &--people h2 {
+      margin-bottom: toRem(6);
+    }
+
+    &--people .error {
+      color: color(red, 500);
+
+      &[aria-hidden="true"] {
+        display: none;
+      }
+    }
+  }
+
+  &__input-enter {
+    position: relative;
+
+    img {
+      position: absolute;
+      top: toRem(16);
+      left: toRem(17);
+    }
+
+    .icon-dollar {
+      margin-left: toRem(2);
+    }
+  }
+
+  &__tip-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: toRem(16);
+
+    label {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding-block: toRem(6);
+      font-size: fs(large);
+      color: color(neutral, 100);
+      background-color: color(cyan, 500);
+      border-radius: toRem(5);
+      cursor: pointer;
+      transition: color 300ms ease, background-color 400ms ease;
+
+      &:hover {
+        color: color(cyan, 500);
+        background-color: rgba(color(cyan, 400), 0.2);
+      }
+    }
+
+    input[type="radio"]:checked + label {
+      color: color(cyan, 500);
+      background-color: color(cyan, 400);
+    }
+  }
+}

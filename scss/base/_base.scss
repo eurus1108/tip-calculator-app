@@ -1,0 +1,15 @@
+@use "../abstracts/" as *;
+
+body {
+  font-family: "Space Mono", sans-serif;
+  font-size: fs(base);
+  font-weight: 700;
+  line-height: 1.5;
+  color: color(neutral, 500);
+  background-color: color(neutral, 300);
+}
+
+button,
+input {
+  font: inherit;
+}

@@ -1,0 +1,50 @@
+@use "../abstracts/" as *;
+
+.result {
+  padding: toRem(40);
+  background-color: color(cyan, 500);
+  border-radius: toRem(15);
+
+  @include mq(max, small) {
+    padding: toRem(21);
+  }
+
+  &__container {
+    @include mq(max, small) {
+      margin-bottom: toRem(3);
+      margin-left: toRem(3);
+      padding-top: toRem(16);
+    }
+
+    > * {
+      margin-right: toRem(1);
+    }
+  }
+
+  &__field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: toRem(21);
+
+    .text-content {
+      margin-top: toRem(2);
+      color: color(neutral, 100);
+
+      h2 {
+        font-size: fs(base);
+      }
+
+      p {
+        font-size: fs(small);
+        color: color(neutral, 400);
+      }
+    }
+
+    .total-amount {
+      font-size: fs(xlarge);
+      @include letter-spacing(-2.5);
+      height: toRem(47);
+      color: color(cyan, 400);
+    }
+  }
+}

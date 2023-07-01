@@ -1,0 +1,10 @@
+@use "../abstracts/" as *;
+
+.header {
+  display: flex;
+  justify-content: center;
+
+  &__logo {
+    padding-block: toRem(50) toRem(34);
+  }
+}

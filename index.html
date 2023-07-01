@@ -11,6 +11,133 @@
     />
     <title>Frontend Mentor - Tip Calculator App</title>
   </head>
-  <body></body>
+  <body>
+    <div class="h-wrapper">
+      <header class="header">
+        <div class="header__logo">
+          <img src="./images/logo.svg" alt="logo" />
+        </div>
+      </header>
+      <main class="viewport">
+        <div class="card">
+          <div class="card__container">
+            <form class="calculator">
+              <div class="calculator__input-box calculator__input-box--bill">
+                <h2>Bill</h2>
+                <div class="calculator__input-enter">
+                  <img
+                    src="./images/icon-dollar.svg"
+                    alt="dollar"
+                    class="icon-dollar"
+                  />
+                  <input
+                    type="number"
+                    placeholder="0"
+                    min="0"
+                    data-input-bill
+                    class="form-input"
+                  />
+                </div>
+              </div>
+              <div class="calculator__input-box calculator__input-box--tip">
+                <h2>Select Tip %</h2>
+                <div class="calculator__tip-container">
+                  <div class="calculator__tip">
+                    <input
+                      type="radio"
+                      name="tip"
+                      id="05"
+                      value="0.05"
+                      data-tip
+                    />
+                    <label for="05">5%</label>
+                  </div>
+                  <div class="calculator__tip">
+                    <input
+                      type="radio"
+                      name="tip"
+                      id="10"
+                      value="0.10"
+                      data-tip
+                    />
+                    <label for="10">10%</label>
+                  </div>
+                  <div class="calculator__tip">
+                    <input
+                      type="radio"
+                      name="tip"
+                      id="15"
+                      value="0.15"
+                      data-tip
+                    />
+                    <label for="15">15%</label>
+                  </div>
+                  <div class="calculator__tip">
+                    <input
+                      type="radio"
+                      name="tip"
+                      id="25"
+                      value="0.25"
+                      data-tip
+                    />
+                    <label for="25">25%</label>
+                  </div>
+                  <div class="calculator__tip">
+                    <input
+                      type="radio"
+                      name="tip"
+                      id="50"
+                      value="0.05"
+                      data-tip
+                    />
+                    <label for="50">50%</label>
+                  </div>
+                  <input
+                    type="number"
+                    name="tip"
+                    data-tip-custom
+                    placeholder="Custom"
+                  />
+                </div>
+              </div>
+              <div class="calculator__input-box calculator__input-box--people">
+                <h2>Number of People</h2>
+                <span class="error" aria-hidden="true">Can't be zero</span>
+                <div class="calculator__input-enter">
+                  <img src="./images/icon-person.svg" alt="person" />
+                  <input
+                    type="number"
+                    placeholder="0"
+                    min="0"
+                    data-people-count
+                    class="form-input"
+                  />
+                </div>
+              </div>
+            </form>
+            <div class="result">
+              <div class="result__container">
+                <div class="result__field result__field--tip">
+                  <div class="text-content">
+                    <h2>Tip Amount</h2>
+                    <p>/ person</p>
+                  </div>
+                  <div class="total-amount" data-tip-amount>$0.00</div>
+                </div>
+                <div class="result__field result__field--bill">
+                  <div class="text-content">
+                    <h2>Total</h2>
+                    <p>/ person</p>
+                  </div>
+                  <div class="total-amount" data-bill-amount>$0.00</div>
+                </div>
+                <button class="button" data-reset disabled>RESET</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
   <script src="./js/script.js"></script>
 </html>

@@ -1,0 +1,18 @@
+@use "../abstracts/" as *;
+
+.button {
+  margin-top: toRem(12);
+  padding-block: toRem(10) toRem(8);
+  width: 100%;
+  font-size: fs(medium);
+  color: color(cyan, 500);
+  background-color: color(cyan, 400);
+  border: none;
+  border-radius: toRem(5);
+  cursor: pointer;
+
+  &[disabled] {
+    background-color: rgba(color(neutral, 500), 0.6);
+    mix-blend-mode: color-dodge;
+  }
+}

@@ -18,6 +18,8 @@ resetBtn.addEventListener("click", () => {
     option.disabled = false;
   });
   resetBtn.disabled = true;
+  peopleInput.classList.remove("error");
+  errorMsg.setAttribute("aria-hidden", "true");
 });
 
 let bill = 0.0;
@@ -30,13 +32,13 @@ billInput.addEventListener("input", () => {
   if (billInput.value !== "") {
     bill = parseFloat(billInput.value);
   }
+
   calculateTip();
 });
 
 tipOptions.forEach((option) => {
   option.addEventListener("click", () => {
     resetBtn.disabled = false;
-    tipCustomOption;
     tip = parseFloat(option.value);
     calculateTip();
   });
@@ -44,9 +46,14 @@ tipOptions.forEach((option) => {
 
 tipCustomOption.addEventListener("input", () => {
   resetBtn.disabled = false;
-  tip = parseFloat(tipCustomOption.value) / 100;
 
-  if (!isNaN(tip)) {
+  tip = 0;
+
+  if (tipCustomOption.value !== "") {
+    tip = parseFloat(tipCustomOption.value) / 100;
+  }
+
+  if (tip > 0) {
     tipOptions.forEach((option) => {
       option.checked = false;
       option.disabled = true;
@@ -62,9 +69,12 @@ tipCustomOption.addEventListener("input", () => {
 
 peopleInput.addEventListener("input", () => {
   resetBtn.disabled = false;
-  numberOfPeople = parseInt(peopleInput.value);
 
-  if (numberOfPeople === 0) {
+  if (peopleInput.value !== "") {
+    numberOfPeople = parseInt(peopleInput.value);
+  }
+
+  if (numberOfPeople === 0 || peopleInput.value === "") {
     peopleInput.classList.add("error");
     errorMsg.setAttribute("aria-hidden", "false");
   } else {

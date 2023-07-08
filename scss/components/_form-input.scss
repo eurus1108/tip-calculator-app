@@ -1,28 +1,6 @@
 @use "../abstracts/" as *;
 
 input {
-  &[type="number"] {
-    padding: toRem(6) toRem(17);
-    width: 100%;
-    font-size: fs(large);
-    text-align: right;
-    color: color(cyan, 500);
-    background-color: color(neutral, 200);
-    outline: 2px solid color(neutral, 200);
-    border-radius: toRem(5);
-    border: none;
-    appearance: textfield;
-    transition: outline-color 300ms ease;
-
-    &:focus {
-      outline-color: color-mix(
-        in srgb,
-        rgba(color(cyan, 500), 0.4),
-        rgba(color(cyan, 400), 0.5)
-      );
-    }
-  }
-
   &[type="radio"] {
     display: none;
   }
@@ -36,18 +14,64 @@ input {
   }
 }
 
+.form-input {
+  padding: toRem(6) toRem(17);
+  width: 100%;
+  font-size: fs(large);
+  text-align: right;
+  color: color(cyan, 500);
+  background-color: color(neutral, 200);
+  outline: 2px solid color(neutral, 200);
+  border-radius: toRem(5);
+  border: none;
+  appearance: textfield;
+  transition: outline-color 300ms ease;
+
+  &:focus {
+    outline-color: color-mix(
+      in srgb,
+      rgba(color(cyan, 500), 0.4),
+      rgba(color(cyan, 400), 0.5)
+    );
+  }
+
+  &.error {
+    outline-color: color(red, 500);
+  }
+
+  @include mq(medium) {
+    &[data-tip-custom] {
+      padding: toRem(6) toRem(14);
+    }
+  }
+}
+
 .calculator {
-  margin-inline: toRem(8);
+  @include mq(medium, max) {
+    padding-inline: toRem(8);
+  }
+
+  @include mq(medium) {
+    padding: toRem(13) 0 toRem(16) toRem(16);
+  }
 
   &__input-box {
-    margin-bottom: toRem(32);
+    &:not(:last-child) {
+      margin-bottom: toRem(40);
+    }
+
+    @include mq(small, max) {
+      margin-bottom: toRem(32);
+    }
 
     h2 {
       font-size: fs(base);
     }
 
-    &--tip h2 {
-      margin-bottom: toRem(16);
+    &--tip {
+      h2 {
+        margin-bottom: toRem(16);
+      }
     }
 
     &--bill h2,
@@ -55,11 +79,18 @@ input {
       margin-bottom: toRem(6);
     }
 
-    &--people .error {
-      color: color(red, 500);
+    &--people {
+      position: relative;
 
-      &[aria-hidden="true"] {
-        display: none;
+      > .error {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: color(red, 500);
+
+        &[aria-hidden="true"] {
+          display: none;
+        }
       }
     }
   }
@@ -82,6 +113,19 @@ input {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: toRem(16);
+
+    @include mq(medium) {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: toRem(14);
+
+      > * {
+        width: toRem(117);
+      }
+
+      label {
+        width: toRem(117);
+      }
+    }
 
     label {
       display: flex;

@@ -6,5 +6,9 @@
 
   &__logo {
     padding-block: toRem(50) toRem(34);
+
+    @include mq(small) {
+      padding-block: toRem(163) toRem(81);
+    }
   }
 }

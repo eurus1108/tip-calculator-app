@@ -1,7 +1,7 @@
 @use "./breakpoints" as *;
 @use "./function" as *;
 
-@mixin mq($type: min, $width) {
+@mixin mq($width, $type: min) {
   @if not map-has-key($breakpoints, $width) {
     @error "#{$width} does not exist in $breakpoints";
   }
@@ -18,9 +18,9 @@
 }
 
 @mixin letter-spacing($val) {
-  letter-spacing: ($val / 16) + em;
+  letter-spacing: calc($val / 100) + em;
 }
 
 @mixin line-height($val) {
-  line-height: ($val / 16) + rem;
+  line-height: calc($val / 16) + rem;
 }

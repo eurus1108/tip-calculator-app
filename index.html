@@ -19,7 +19,7 @@
         </div>
       </header>
       <main class="viewport">
-        <div class="card">
+        <section class="card">
           <div class="card__container">
             <form class="calculator">
               <div class="calculator__input-box calculator__input-box--bill">
@@ -87,7 +87,7 @@
                       type="radio"
                       name="tip"
                       id="50"
-                      value="0.05"
+                      value="0.50"
                       data-tip
                     />
                     <label for="50">50%</label>
@@ -97,6 +97,7 @@
                     name="tip"
                     data-tip-custom
                     placeholder="Custom"
+                    class="form-input"
                   />
                 </div>
               </div>
@@ -117,25 +118,31 @@
             </form>
             <div class="result">
               <div class="result__container">
-                <div class="result__field result__field--tip">
-                  <div class="text-content">
-                    <h2>Tip Amount</h2>
-                    <p>/ person</p>
+                <div>
+                  <div class="result__field result__field--tip">
+                    <div class="text-content">
+                      <h2>Tip Amount</h2>
+                      <p>/ person</p>
+                    </div>
+                    <div class="total-amount">
+                      <h2 data-tip-amount>$0.00</h2>
+                    </div>
                   </div>
-                  <div class="total-amount" data-tip-amount>$0.00</div>
-                </div>
-                <div class="result__field result__field--bill">
-                  <div class="text-content">
-                    <h2>Total</h2>
-                    <p>/ person</p>
+                  <div class="result__field result__field--bill">
+                    <div class="text-content">
+                      <h2>Total</h2>
+                      <p>/ person</p>
+                    </div>
+                    <div class="total-amount">
+                      <h2 data-bill-amount>$0.00</h2>
+                    </div>
                   </div>
-                  <div class="total-amount" data-bill-amount>$0.00</div>
                 </div>
                 <button class="button" data-reset disabled>RESET</button>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </main>
     </div>
   </body>

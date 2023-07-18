@@ -20,11 +20,14 @@ resetBtn.addEventListener("click", () => {
   resetBtn.disabled = true;
   peopleInput.classList.remove("error");
   errorMsg.setAttribute("aria-hidden", "true");
+  bill = 0.0;
+  numberOfPeople = 0;
+  tip = 0;
 });
 
 let bill = 0.0;
 let numberOfPeople = 0;
-let tip = 0.05;
+let tip = 0;
 
 billInput.addEventListener("input", () => {
   resetBtn.disabled = false;
@@ -46,8 +49,6 @@ tipOptions.forEach((option) => {
 
 tipCustomOption.addEventListener("input", () => {
   resetBtn.disabled = false;
-
-  tip = 0;
 
   if (tipCustomOption.value !== "") {
     tip = parseFloat(tipCustomOption.value) / 100;
